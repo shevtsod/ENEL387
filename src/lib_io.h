@@ -28,6 +28,10 @@ uint16_t getSW3(void);			//3 - Green Button
 uint16_t getSW4(void);			//4 - Blue Button
 uint16_t getSW5(void);			//5 - Black Button
 
+uint16_t getA(void);				//A Button
+uint16_t getB(void);				//B Button
+uint16_t getMenu(void);			//Menu button
+
 //Set output values
 void setLED1(uint16_t state);
 void setLED2(uint16_t state);

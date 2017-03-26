@@ -26,3 +26,10 @@
 /* FUNCTION PROTOTYPES */
 void initializeADC1(void);
 uint32_t getValueFromChannel(uint8_t channel);
+
+//Driver for thumbstick
+uint8_t getPosX(void);
+uint8_t getNegX(void);
+
+uint8_t getPosY(void);
+uint8_t getNegY(void);

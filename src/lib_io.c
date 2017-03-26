@@ -43,6 +43,9 @@ void initializeIO(void) {
 	/* INPUTS */
 	//Switches are reset to their correct configuration,
 	//no configuration needed.
+	GPIOA->CRH &= ~GPIO_CRH_MODE13 & ~GPIO_CRH_MODE14 & ~GPIO_CRH_MODE15;
+	GPIOA->CRH |= GPIO_CRH_CNF13_0 | GPIO_CRH_CNF14_0 | GPIO_CRH_CNF15_0;
+	GPIOA->CRH &= ~GPIO_CRH_CNF13_1 & ~GPIO_CRH_CNF14_1 & ~GPIO_CRH_CNF15_1;
 	
 	/* OUTPUTS */
 	//GPIOA_CRH
@@ -148,6 +151,27 @@ uint16_t getSW4(void) {
 uint16_t getSW5(void) {
 	//SW5 - PA5
 	return !(GPIOA->IDR & GPIO_IDR_IDR5);
+}
+
+/*
+* Return value of Button A (PA14)
+*/
+uint16_t getA(void) {
+	return !(GPIOA->IDR & GPIO_IDR_IDR14);
+}
+
+/*
+* Return value of Button B (PA15)
+*/
+uint16_t getB(void) {
+	return !(GPIOA->IDR & GPIO_IDR_IDR15);
+}
+
+/*
+* Return value of Menu Button (PA13)
+*/
+uint16_t getMenu(void) {
+	return !(GPIOA->IDR & GPIO_IDR_IDR13);
 }
 
 

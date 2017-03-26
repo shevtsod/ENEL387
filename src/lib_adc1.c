@@ -71,3 +71,35 @@ uint32_t getValueFromChannel(uint8_t channel) {
 	//return data from the ADC
 	return ADC1->DR;
 }
+
+//Functions for Thumbstick driver
+
+/*
+* Return true if X is in the positive region above the deadzone
+*/
+uint8_t getPosX(void) {
+	return getValueFromChannel(1) > 0xE00;
+}
+
+/*
+* Return true if X is in the negative region below the deadzone
+*/
+uint8_t getNegX(void) {
+	return getValueFromChannel(1) < 0x200;
+}
+
+/*
+* Return true if Y is in the positive region above the deadzone
+*	X direction has priority over Y
+*/
+uint8_t getPosY(void) {
+	return (!getPosX() && !getNegX()) && getValueFromChannel(0) > 0xE00;
+}
+
+/*
+* Return true if Y is in the negative region below the deadzone
+* X direction has priority over Y
+*/
+uint8_t getNegY(void) {
+	return (!getPosX() && !getNegX()) && getValueFromChannel(0) < 0x200;
+}
