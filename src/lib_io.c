@@ -171,7 +171,7 @@ uint16_t getB(void) {
 * Return value of Menu Button (PA13)
 */
 uint16_t getMenu(void) {
-	return !(GPIOA->IDR & GPIO_IDR_IDR13);
+	return !(GPIOC->IDR & GPIO_IDR_IDR0);
 }
 
 

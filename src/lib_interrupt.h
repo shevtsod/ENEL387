@@ -14,4 +14,4 @@
 
 /* FUNCTION PROTOTYPES */
 void initializeSysTick(void);
-void initializeEXTI0(void);
+void initializeEXTI(void);
