@@ -14,3 +14,4 @@
 
 /* FUNCTION PROTOTYPES */
 void stateGameConnect4(void);
+void resetConnect4(void);

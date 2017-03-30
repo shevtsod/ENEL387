@@ -11,15 +11,36 @@
 
 #define TIME_TO_WAIT 		15
 
-int counter = 0;
+static int counter = 0;
 
 void stateSplash(void) {
 	println1("   TINY GAME   ");
-	println2("    CONSOLE    ");
+	println2("  CONSOLE v1.0    ");
 	println4(" DANIEL SHEVTSOV");
 	
-	if(counter < TIME_TO_WAIT)
+	//Enable buzzer for duration of splash screen
+	if(counter < 3)
+		setPWMEnabled(1);
+	
+	// LED pattern corresponding to current counter value
+	if (counter > 4 * TIME_TO_WAIT / 5) {
+		setLED1(1);
+	} else if (counter > 3 * TIME_TO_WAIT / 5) {
+		setLED2(1);
+	} else if (counter > 2 * TIME_TO_WAIT / 5) {
+		setLED3(1);
+	} else if (counter > TIME_TO_WAIT / 5) {
+		setLED4(1);
+	}
+	
+	if(counter < TIME_TO_WAIT) {
 		counter++;
-	else
+	} else {
+		setLED1(0);
+		setLED2(0);
+		setLED3(0);
+		setLED4(0);
+		setPWMEnabled(0);
 		setState(STATE_MAIN_MENU);
+	}
 }

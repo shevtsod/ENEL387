@@ -14,3 +14,4 @@
 
 /* FUNCTION PROTOTYPES */
 void stateGameTicTacToe(void);
+void resetTicTacToe(void);

@@ -10,6 +10,8 @@
 */
 
 //Libraries
+#include <stdlib.h>
+
 #include "lib_clock.h"
 #include "lib_io.h"
 #include "lib_lcd.h"
@@ -24,14 +26,38 @@
 #include "prog_tictactoe.h"
 #include "prog_connect4.h"
 
+//For debugging purposes, you can set the initial state 
+//(i.e. debug a certain game or menu)
+#define INITIAL_STATE STATE_GAME_TICTACTOE
+
 int main() {
-	//Initialize
+	//Initialize required modules of STM32F100RB
 	initializeClock();
 	initializeIO();
 	initializeLCD();
 	initializePWM();
 	initializeADC1();
 	initializeEXTI();
+	
+	//Seed random number generator for games that require it
+	//NOTE: Tried to include time.h and call srand(time(NULL)), but
+	//      this caused the program to crash. See notes in
+	//      doc/03_final_report.docx
+	srand(0);
+	
+	//Reset all games
+	resetSnake();
+	resetTicTacToe();
+	resetConnect4();
+	
+	//Reset outputs
+	setLED1(0);
+	setLED2(0);
+	setLED3(0);
+	setLED4(0);
+	setPWMEnabled(0);
+	
+	setState(INITIAL_STATE);
 	
 	//Functions to execute continuously
 	while(1) {
@@ -59,12 +85,9 @@ int main() {
 	
 }
 
-/*
- SysTick_Handler is an interrupt handler that executes when a timer expires
-*/
-void SysTick_Handler(void) {
-
-}
+/**********************************************************************************
+*                             INTERRUPT HANDLERS
+**********************************************************************************/
 
 /*
  EXTI2_IRQHandler is an interrupt handler for when the menu button (PD2) is pressed.
@@ -76,4 +99,22 @@ void EXTI2_IRQHandler(void) {
 	//For any state other than splash and main menu, set the state to main menu state
 	if(getState() != STATE_SPLASH && getState() != STATE_MAIN_MENU)
 		setState(STATE_MAIN_MENU);
+	else
+		return;
+	
+	//Reset all games
+	resetSnake();
+	resetTicTacToe();
+	resetConnect4();
+	
+	//Clear outputs
+	println1("");
+	println2("");
+	println3("");
+	println4("");
+	setLED1(0);
+	setLED2(0);
+	setLED3(0);
+	setLED4(0);
+	setPWMEnabled(0);
 }

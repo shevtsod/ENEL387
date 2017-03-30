@@ -10,6 +10,7 @@
 /* LIBRARY INCLUSIONS */
 #include "lib_lcd.h"
 #include "lib_io.h"
+#include "lib_adc1.h"
 #include "lib_fsm.h"
 
 /* FUNCTION PROTOTYPES */
