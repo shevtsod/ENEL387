@@ -361,3 +361,5 @@ src/RTE/
 *.dbgconf
 
 *.scvd
+
+*.docx

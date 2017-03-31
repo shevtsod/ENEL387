@@ -46,7 +46,7 @@ static int winner;
 static int currentX;
 static int currentY;
 
-//Convert 2D array to 4 strings to output
+//Convert 2D array to 3 strings to output
 static char ln2[17];
 static char ln3[17];
 static char ln4[17];
@@ -96,7 +96,7 @@ void stateGameTicTacToe(void) {
 		strcat(temp, ln2);
 		strcpy(ln2, temp);
 		memset(temp, SYMBOL_WALL, sizeof temp);
-		temp[6] = '\0';
+		temp[7] = '\0';
 		strcat(ln2, temp);
 
 		memset(temp, SYMBOL_WALL, sizeof temp);
@@ -106,7 +106,7 @@ void stateGameTicTacToe(void) {
 		strcat(temp, ln3);
 		strcpy(ln3, temp);
 		memset(temp, SYMBOL_WALL, sizeof temp);
-		temp[6] = '\0';
+		temp[7] = '\0';
 		strcat(ln3, temp);
 
 		memset(temp, SYMBOL_WALL, sizeof temp);
@@ -116,7 +116,7 @@ void stateGameTicTacToe(void) {
 		strcat(temp, ln4);
 		strcpy(ln4, temp);
 		memset(temp, SYMBOL_WALL, sizeof temp);
-		temp[6] = '\0';
+		temp[7] = '\0';
 		strcat(ln4, temp);
 		
 		println2(ln2);
@@ -131,12 +131,10 @@ void stateGameTicTacToe(void) {
 		if(currentTurn == PLAYER) {
 			println1("  PLAYER  TURN");
 			playPlayer();
-			return;
 		}
 		else {
 			println1("    AI  TURN");
 			playAI();
-			return;
 		}
 		
 	} 

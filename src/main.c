@@ -28,7 +28,7 @@
 
 //For debugging purposes, you can set the initial state 
 //(i.e. debug a certain game or menu)
-#define INITIAL_STATE STATE_GAME_TICTACTOE
+#define INITIAL_STATE 			STATE_SPLASH
 
 int main() {
 	//Initialize required modules of STM32F100RB
