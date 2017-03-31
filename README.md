@@ -1,5 +1,5 @@
-![Logo](http://i.imgur.com/5FoE0X3.png)
-![Collage](http://i.imgur.com/FH6NWTA.jpg)
+![Logo](http://i.imgur.com/ISRwt4e.jpg)
+![Collage](http://i.imgur.com/PpgLhs6.jpg)
 # ENEL 387 Project
 Project for Electronics Engineering 387 - Microcomputer Systems Design
 
