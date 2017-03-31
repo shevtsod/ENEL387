@@ -347,19 +347,12 @@ __pycache__/
 # End of https://www.gitignore.io/api/visualstudio
 
 src/system_stm32f1xx\.c
-
 src/stm32\.xml
-
 src/RTE/
-
 *.uvprojx
-
 *.uvoptx
-
 *.Daniel Shevtsov
-
 *.dbgconf
-
 *.scvd
-
 *.docx
+*.psd
