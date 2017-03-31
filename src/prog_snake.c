@@ -108,10 +108,10 @@ void stateGameSnake(void) {
 		
 		delayMS(150);
 		
-	} else {
+	} 
+	else {
 		//If not alive, print a menu of post-game options
 		if(getA()) {
-			setPWMEnabled(0);
 			resetSnake();
 		}
 		

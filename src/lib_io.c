@@ -61,7 +61,7 @@ void initializeIO(void) {
 							& ~GPIO_CRH_CNF11
 							& ~GPIO_CRH_CNF12;
 	
-	//GPIOA_CRH
+	//GPIOC_CRH
 	//On-board LEDs on ports PC8, PC9
 	GPIOC->CRH |= GPIO_CRH_MODE8
 							| GPIO_CRH_MODE9;

@@ -8,11 +8,12 @@
 */
 
 /* LIBRARY INCLUSIONS */
+#include "lib_fsm.h"
+
 #include "lib_lcd.h"
 #include "lib_io.h"
 #include "lib_adc1.h"
 #include "lib_pwm.h"
-#include "lib_fsm.h"
 
 /* FUNCTION PROTOTYPES */
 void stateGameSnake(void);
