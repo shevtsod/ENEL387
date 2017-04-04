@@ -38,7 +38,7 @@ int main() {
 	initializePWM();
 	initializeADC1();
 	initializeEXTI();
-	
+
 	//Seed random number generator for games that require it
 	//NOTE: Tried to include time.h and call srand(time(NULL)), but
 	//      this caused the program to crash. See notes in

@@ -113,6 +113,7 @@ void stateGameSnake(void) {
 		//If not alive, print a menu of post-game options
 		if(getA()) {
 			resetSnake();
+			return;
 		}
 		
 		if(currentTokens < NEEDED_TOKENS)

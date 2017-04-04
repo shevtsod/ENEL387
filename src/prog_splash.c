@@ -15,7 +15,7 @@ static int counter = 0;
 
 void stateSplash(void) {
 	println1("   TINY GAME   ");
-	println2("  CONSOLE v1.0    ");
+	println2("  CONSOLE v1.1    ");
 	println4(" DANIEL SHEVTSOV");
 	
 	//Enable buzzer for duration of splash screen

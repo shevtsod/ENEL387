@@ -14,6 +14,7 @@
 static int currentSelection = 1;
 
 void stateMain(void) {
+	setPWMEnabled(0);
 	println1("      MENU");
 	
 	//If user selects a game (presses A), then go to that game

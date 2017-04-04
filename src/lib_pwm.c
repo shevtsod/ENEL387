@@ -34,7 +34,7 @@ void initializePWM(void) {
 							| TIM_CCMR1_OC1M_1
 							| TIM_CCMR1_OC1PE
 							| TIM_CCMR1_OC1FE;
-	TIM1->CCER &= ~TIM_CCER_CC1E;
+	TIM1->CCER |= TIM_CCER_CC1E;
 	//Divide 24MHz clock to 40KHz
 	TIM1->PSC = 59;
 	//Initial PERIOD - frequency = 4KHz
